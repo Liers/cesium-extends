@@ -1,0 +1,45 @@
+{
+  "name": "@cesium-extends/measure",
+  "version": "1.1.2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongfaqiu/cesium-extends.git",
+    "directory": "packages/measure"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -c --watch"
+  },
+  "keywords": [
+    "cesium",
+    "measure"
+  ],
+  "author": "hongfaqiu",
+  "license": "MIT",
+  "peerDependencies": {
+    "cesium": "*"
+  },
+  "devDependencies": {
+    "cesium": "1.70.0"
+  },
+  "dependencies": {
+    "@cesium-extends/drawer": "workspace:*",
+    "@cesium-extends/subscriber": "workspace:*",
+    "@cesium-extends/tooltip": "workspace:*",
+    "@turf/area": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "@turf/intersect": "^6.5.0",
+    "@turf/random": "^6.5.0",
+    "@turf/voronoi": "^6.5.0"
+  }
+}

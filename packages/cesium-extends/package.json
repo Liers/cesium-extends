@@ -1,0 +1,41 @@
+{
+  "name": "cesium-extends",
+  "version": "1.8.14",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongfaqiu/cesium-extends.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -c --watch"
+  },
+  "keywords": [
+    "cesium",
+    "plugin",
+    "extends"
+  ],
+  "author": "hongfaqiu",
+  "license": "MIT",
+  "peerDependencies": {
+    "cesium": "*"
+  },
+  "dependencies": {
+    "@cesium-extends/compass": "workspace:*",
+    "@cesium-extends/drawer": "workspace:*",
+    "@cesium-extends/measure": "workspace:*",
+    "@cesium-extends/popup": "workspace:*",
+    "@cesium-extends/subscriber": "workspace:*",
+    "@cesium-extends/sync-viewer": "workspace:*",
+    "@cesium-extends/tooltip": "workspace:*"
+  }
+}

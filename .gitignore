@@ -1,0 +1,7 @@
+/node_modules
+/coverage
+/dist
+/packages/**/node_modules
+/packages/**/dist
+.turbo
+.history
