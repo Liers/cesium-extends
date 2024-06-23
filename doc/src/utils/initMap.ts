@@ -19,7 +19,7 @@ export function initMap(cesiumContainer: string, options: {
     geocoder: false, // 右上角查询搜索
     infoBox: false, // 信息框
     homeButton: false, // home按钮
-    sceneModePicker: true, // 3d 2d选择器
+    sceneModePicker: false, // 3d 2d选择器
     selectionIndicator: false, //
     timeline: false, // 时间轴
     navigationHelpButton: false, // 右上角帮助按钮
@@ -36,7 +36,7 @@ export function initMap(cesiumContainer: string, options: {
   viewer.scene.moon.show = false; // 不显示月球
   // @ts-ignore
   viewer._cesiumWidget._creditContainer.style.display = 'none';
-  viewer.scene.debugShowFramesPerSecond = true;
+  viewer.scene.debugShowFramesPerSecond = false;
   viewer.scene.skyBox.show = false;
 
   const home = options.home ?? [116.3, 39.9, 15000000]

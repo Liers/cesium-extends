@@ -1,10 +1,16 @@
 import {
+  BoundingRectangle,
   Cartesian2,
   Cartesian3,
   Matrix4,
   SceneMode,
   ScreenSpaceEventHandler,
   ScreenSpaceEventType,
+  ViewportQuad,
+  Color,
+  defined,
+  SceneTransforms,
+  Rectangle,
 } from 'cesium';
 
 import type { Viewer } from 'cesium';
@@ -24,6 +30,7 @@ export default class SyncViewer {
     right: number;
   };
   private _destroyed = false;
+  private _centerRect: ViewportQuad;
   synchronous: boolean;
 
   get isDestory() {
@@ -36,6 +43,8 @@ export default class SyncViewer {
     this._rightViewer = rightViewer;
     this._options = options;
 
+    this._limitOverView(rightViewer);
+
     this._leftHandler = new ScreenSpaceEventHandler(leftViewer.scene.canvas);
     this._rightHandler = new ScreenSpaceEventHandler(rightViewer.scene.canvas);
     this.synchronous = true;
@@ -45,6 +54,12 @@ export default class SyncViewer {
       left: leftCamera.percentageChanged,
       right: rightCamera.percentageChanged,
     };
+
+    this._centerRect = new ViewportQuad(new BoundingRectangle(150, 100, 100, 50));
+    this._centerRect.show = false;
+    this._centerRect.material.uniforms.color = Color.RED.withAlpha(0.5);
+    rightViewer.scene.primitives.add(this._centerRect);
+
     leftCamera.percentageChanged = this._options.percentageChanged ?? 0.01;
     rightCamera.percentageChanged = this._options.percentageChanged ?? 0.01;
     this.start();
@@ -72,6 +87,110 @@ export default class SyncViewer {
     };
   }
 
+  private _limitOverView = (viewer: Viewer) => {
+    const control = viewer.scene.screenSpaceCameraController;
+    control.enableRotate = false;
+    control.enableTranslate = false;
+    control.enableZoom = false;
+    control.enableTilt = false;
+    control.enableLook = false;
+
+    viewer.scene.mode = SceneMode.SCENE2D;
+    viewer.scene.highDynamicRange = false;
+    viewer.scene.globe.enableLighting = false;
+    viewer.scene.globe.showWaterEffect = false;
+    viewer.scene.globe.depthTestAgainstTerrain = false;
+    viewer.scene.skyAtmosphere.show = false;
+    viewer.scene.fog.enabled = false;
+    viewer.scene.skyBox.show = false;
+    viewer.scene.sun.show = false;
+    viewer.scene.moon.show = false;
+    viewer.scene.highDynamicRange = false;
+    viewer.scene.globe.showGroundAtmosphere = false;
+  };
+
+  rectangleExpand = (rectangle: Rectangle, widthFactor: number, heightFactor: number) => {
+    const result = rectangle.clone()
+    widthFactor = (rectangle.width * (1 - widthFactor)) / 2
+    heightFactor = (rectangle.height * (1 - heightFactor)) / 2
+
+    result.west += widthFactor
+    result.south += heightFactor
+    result.east -= widthFactor
+    result.north -= heightFactor
+    result.west = result.west < -Math.PI ? -Math.PI : result.west
+    result.east = result.east > Math.PI ? Math.PI : result.east
+    result.north = result.north > Math.PI / 2 ? Math.PI / 2 : result.north
+    result.south = result.south < -Math.PI / 2 ? -Math.PI / 2 : result.south
+
+    return result
+  };
+
+  private _updateOverView = () => {
+    const parentViewer = this._leftViewer;
+    const overviewViewer = this._rightViewer;
+    if (overviewViewer) {
+    const parentCameraRectangle = parentViewer.camera.computeViewRectangle();
+    if (!parentCameraRectangle) {
+      return;
+    }
+    const rectangle = this.rectangleExpand(parentCameraRectangle, 2, 2);
+
+    overviewViewer.camera.flyTo({
+      destination: rectangle.clone(),
+      orientation: {
+        heading: parentViewer.camera.heading,
+        pitch: parentViewer.camera.pitch,
+        roll: parentViewer.camera.roll,
+      },
+      duration: 0.0,
+    });
+    const wnPosition = Cartesian3.fromRadians(
+      parentCameraRectangle.west,
+      parentCameraRectangle.north,
+    );
+    const enPosition = Cartesian3.fromRadians(
+      parentCameraRectangle.east,
+      parentCameraRectangle.north,
+    );
+    const wsPosition = Cartesian3.fromRadians(
+      parentCameraRectangle.west,
+      parentCameraRectangle.south,
+    );
+    const esPosition = Cartesian3.fromRadians(
+      parentCameraRectangle.east,
+      parentCameraRectangle.south,
+    );
+    const scene = overviewViewer.scene;
+    const wnWindowPosition = SceneTransforms.wgs84ToWindowCoordinates(scene, wnPosition);
+    const enWindowPosition = SceneTransforms.wgs84ToWindowCoordinates(scene, enPosition);
+    const wsWindowPosition = SceneTransforms.wgs84ToWindowCoordinates(scene, wsPosition);
+    const esWindowPosition = SceneTransforms.wgs84ToWindowCoordinates(scene, esPosition);
+
+    if (
+      !defined(wnWindowPosition) ||
+      !defined(enWindowPosition) ||
+      !defined(wsWindowPosition) ||
+      !defined(esWindowPosition)
+    ) {
+      return;
+    }
+
+    const width = enWindowPosition.x - wnWindowPosition.x;
+    const height = wsWindowPosition.y - wnWindowPosition.y;
+    const x = (wnWindowPosition.x + enWindowPosition.x) / 2 - width / 2;
+    const y = (wnWindowPosition.y + wsWindowPosition.y) / 2 - height / 2;
+
+    if (width <= 0 || height <= 0) {
+      return;
+    }
+    console.log('width', width, 'height', height, 'x', x, 'y', y);
+    const boundingRectangle = new BoundingRectangle(x, y, width, height);
+    this._centerRect.rectangle = boundingRectangle;
+    this._centerRect.show = true;
+  }
+  };
+
   private leftChangeEvent = () => {
     if (this._currentOperation === 'left' && this.synchronous) {
       const viewPoint = this.getViewPoint(this._leftViewer);
@@ -81,10 +200,11 @@ export default class SyncViewer {
           new Cartesian3(0, 0, viewPoint.height),
         );
       } else {
-        this._rightViewer.scene.camera.setView({
-          destination: viewPoint.destination,
-          orientation: viewPoint.orientation,
-        });
+        // this._rightViewer.scene.camera.setView({
+        //   destination: viewPoint.destination,
+        //   orientation: viewPoint.orientation,
+        // });
+        this._updateOverView();
       }
     }
   };
