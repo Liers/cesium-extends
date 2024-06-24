@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - master
-      - alpha
-      - beta
+      - main
 
 permissions:
   packages: write
@@ -40,6 +39,6 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUBER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm release
