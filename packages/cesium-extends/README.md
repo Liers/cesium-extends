@@ -21,19 +21,6 @@ cesium-163-extends 提供了以下功能：
 
 详细信息及 demo，请参阅 [API 文档](https://cesium-163-extends.vercel.app/)。
 
-## 示例
-
-<table>
-  <tr>
-    <td><img src="../../doc/public/images/geojson-render-height.png" alt="高度渲染"></td>
-    <td><img src="../../doc/public/images/geojson-render-polygon-height.png" alt="高度渲染"></td>
-  </tr>
-  <tr>
-    <td><img src="../../doc/public/images/geojson-render-section.png" alt="分段渲染"></td>
-    <td><img src="../../doc/public/images/geojson-render-single.png" alt="单值渲染"></td>
-  </tr>
-</table>
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,6 +1,7 @@
 {
   "name": "cesium-163-extends-monorepo",
-  "private": true,
+  "version": "1.0.0-beta",
+  "private": false,
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.6.7",
   "type": "module",
@@ -26,7 +27,9 @@
     "test": "turbo test",
     "coverage": "vitest run --coverage",
     "release": "multi-semantic-release --ignore-private-packages=true --deps.bump=inherit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -r https://github.com/Liers/cesium-extends.git -b main"
   },
   "commitlint": {
     "extends": [
@@ -49,6 +52,7 @@
     "@types/node": "^18.16.7",
     "@vitest/coverage-c8": "^0.29.8",
     "esbuild": "^0.17.18",
+    "gh-pages": "^6.1.1",
     "happy-dom": "^8.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",

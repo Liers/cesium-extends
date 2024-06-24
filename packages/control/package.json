@@ -1,6 +1,6 @@
 {
   "name": "@cesium-163-extends/control",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
