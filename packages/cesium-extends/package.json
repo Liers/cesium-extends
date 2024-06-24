@@ -1,6 +1,6 @@
 {
   "name": "cesium163-extends",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -29,13 +29,10 @@
   "peerDependencies": {
     "cesium": "*"
   },
+  "devDependencies": {
+    "cesium": "1.70.0"
+  },
   "dependencies": {
-    "@cesium163-extends/drawer": "1.0.0",
-    "@cesium163-extends/measure": "1.0.0",
-    "@cesium163-extends/popup": "1.0.0",
-    "@cesium163-extends/subscriber": "1.0.0",
-    "@cesium163-extends/over-viewer": "1.0.0",
-    "@cesium163-extends/control": "1.0.0",
-    "@cesium163-extends/tooltip": "1.0.0"
+    "@turf/helpers": "^6.5.0"
   }
 }
