@@ -4,6 +4,7 @@
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.6.7",
   "type": "module",
+  "homepage": "https://liers.github.io/cesium-163-extends",
   "scripts": {
     "dev": "turbo dev --concurrency 15",
     "build": "turbo build --filter=!doc",
