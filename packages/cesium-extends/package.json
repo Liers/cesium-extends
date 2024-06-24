@@ -1,6 +1,6 @@
 {
   "name": "cesium-163-extends",
-  "version": "1.8.14",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

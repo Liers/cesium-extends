@@ -1,6 +1,6 @@
 {
   "name": "@cesium-163-extends/measure",
-  "version": "1.1.2",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
