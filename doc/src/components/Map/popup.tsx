@@ -1,6 +1,6 @@
 import { Viewer } from 'cesium';
 import React, { useEffect, useRef } from 'react';
-import { Popup } from 'cesium-extends';
+import { Popup } from 'cesium-163-extends';
 
 import { initMap } from '../../utils/initMap';
 import './index.less'
