@@ -1,44 +1,44 @@
-name: Release
+name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
-      - master
-      - main
-
-permissions:
-  packages: write
-  contents: write
+      - docs
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 jobs:
-  release:
-    name: Release
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
         with:
-          fetch-depth: 0
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+          version: 8
+      - uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
-          cache: pnpm
-
+          node-version: 18
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: |
+          cd ./doc
+          pnpm install --frozen-lockfile
+      - name: Build monorepo-docs-website
+        run: |
+          echo ${{ github.workspace }}
+          cd ./doc
+          pnpm build
 
-      - name: Build
-        run: pnpm run build
+      # Popular action to deploy to GitHub Pages:
+      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          # Build output to publish to the `gh-pages` branch:
+          publish_dir: ./doc/dist # 文档打包产物的目录名就是dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
 
-      - name: Test
-        run: pnpm run test
-
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
