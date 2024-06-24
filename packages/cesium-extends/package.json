@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hongfaqiu/cesium-extends.git"
+    "url": "git+https://github.com/Liers/cesium-extends.git"
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
@@ -24,18 +24,18 @@
     "plugin",
     "extends"
   ],
-  "author": "hongfaqiu",
+  "author": "unshiliu",
   "license": "MIT",
   "peerDependencies": {
     "cesium": "*"
   },
   "dependencies": {
-    "@cesium-extends/compass": "workspace:*",
     "@cesium-extends/drawer": "workspace:*",
     "@cesium-extends/measure": "workspace:*",
     "@cesium-extends/popup": "workspace:*",
     "@cesium-extends/subscriber": "workspace:*",
-    "@cesium-extends/sync-viewer": "workspace:*",
+    "@cesium-extends/over-viewer": "workspace:*",
+    "@cesium-extends/control": "workspace:*",
     "@cesium-extends/tooltip": "workspace:*"
   }
 }

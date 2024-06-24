@@ -8,7 +8,7 @@ export default defineConfig({
   themeConfig: {
     name: 'cesium-extends',
     socialLinks: {
-      github: 'https://github.com/hongfaqiu/cesium-extends',
+      github: 'https://github.com/Liers/cesium-extends',
     },
     logo: "/logo.svg"
   },

@@ -5,5 +5,5 @@ export * from '@cesium-extends/measure';
 
 export { default as Drawer } from '@cesium-extends/drawer';
 export { default as Popup } from '@cesium-extends/popup';
-export { default as Compass } from '@cesium-extends/compass';
-export { default as SyncViewer } from '@cesium-extends/sync-viewer';
+export { default as OverViewer } from '@cesium-extends/over-viewer';
+export { default as Control } from '@cesium-extends/control';

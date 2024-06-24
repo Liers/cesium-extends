@@ -14,33 +14,12 @@ npm install cesium-extends --save
 
 cesium-extends 提供了以下功能：
 
-- 事件订阅 `@cesium-extends/subscriber`
-- primitive 方式加速渲染 geojson `@cesium-extends/primitive-geojson`
-- 丰富的 geojson 样式渲染 `@cesium-extends/geojson-render`
-- tooltip `@cesium-extends/tooltip`
-- 弹出框 `@cesium-extends/popup`
-- 指南针 `@cesium-extends/compass`
-- 缩放控制 `@cesium-extends/zoom-control`
-- 绘图工具 `@cesium-extends/drawer`
 - 测量工具 `@cesium-extends/measure`
-- 双屏联动工具 `@cesium-extends/sync-viewer`
-- 热力图 `@cesium-extends/heat`
+- 鹰眼图 `@cesium-extends/over-viewer`
+- 控件工具 `@cesium-extends/control`
 - ...
 
 详细信息及 demo，请参阅 [API 文档](https://extends.opendde.com/)。
-
-## 示例
-
-<table>
-  <tr>
-    <td><img src="/doc/public/images/geojson-render-height.png" alt="高度渲染"></td>
-    <td><img src="/doc/public/images/geojson-render-polygon-height.png" alt="高度渲染"></td>
-  </tr>
-  <tr>
-    <td><img src="/doc/public/images/geojson-render-section.png" alt="分段渲染"></td>
-    <td><img src="/doc/public/images/geojson-render-single.png" alt="单值渲染"></td>
-  </tr>
-</table>
 
 ## License
 

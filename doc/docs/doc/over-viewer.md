@@ -1,30 +1,31 @@
 ---
-title: sync-viewer
+title: over-viewer（鹰眼图）
 nav: 指南
 group: 扩展
-order: 11
+order: 2
 ---
 
-# @cesium-extends/sync-viewer
+# @cesium-extends/over-viewer
 
-`@cesium-extends/sync-viewer` 是一个用于同步两个 Cesium Viewer 视图的 npm 包。
+`@cesium-extends/over-viewer` 是一个用于加载鹰眼图控件的 npm 包。
 
 ## 安装
 
 ```bash
-npm install @cesium-extends/sync-viewer
+npm install @cesium-extends/over-viewer
 ```
 
 ## 使用
 
 ```js
 import { Viewer } from 'cesium';
-import SyncViewer from '@cesium-extends/sync-viewer';
+import OverViewer from '@cesium-extends/over-viewer';
 
 const leftViewer = new Viewer('left-container');
-const rightViewer = new Viewer('right-container');
+// 鹰眼图HTML容器
+const overViewerContainerID = 'overview-container';
 
-const syncViewer = new SyncViewer(leftViewer, rightViewer);
+const syncViewer = new OverViewer(parentViewer.current, overViewerContainerID);
 
 // 销毁
 syncViewer.destroy();
@@ -32,9 +33,9 @@ syncViewer.destroy();
 
 ## 示例
 
-下面的示例演示了两个同步的视图，可以切换二三维查看同步效果
+下面的示例演示了鹰眼图效果
 
-<code src="@/components/Map/sync-viewer.tsx"></code>
+<code src="@/components/Map/over-viewer.tsx"></code>
 
 ### `SyncViewProps`
 
@@ -42,16 +43,16 @@ syncViewer.destroy();
 | ----------------- | -------- | ------------------------------------------------- |
 | percentageChanged | `number` | 相机 zoom 改变时距离改变的百分比，默认为 `0.01`。 |
 
-### `SyncViewer`
+### `OverViewer`
 
 #### 构造函数
 
 ```ts
-constructor(leftViewer: Viewer, rightViewer: Viewer, options?: SyncViewProps)
+constructor(parentViewer: Viewer, overViewerContainerID: string, options?: SyncViewProps)
 ```
 
-- `leftViewer`: 左侧 Viewer 实例。
-- `rightViewer`: 右侧 Viewer 实例。
+- `parentViewer`: 父 Viewer 实例。
+- `overViewerContainerID`: 鹰眼图 Viewer 承载容器ID。
 - `options` (可选): 配置项，包括：
   - `percentageChanged`: 相机 zoom 改变时距离改变的百分比，默认为 `0.01`。
 

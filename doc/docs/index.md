@@ -7,5 +7,5 @@ hero:
     - text: Document
       link: /doc
     - text: GitHub
-      link: https://github.com/hongfaqiu/cesium-extends.git
+      link: https://github.com/Liers/cesium-extends.git
 ---

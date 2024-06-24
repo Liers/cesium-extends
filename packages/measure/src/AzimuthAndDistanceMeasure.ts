@@ -8,10 +8,9 @@ import type { PolylineGraphics } from 'cesium';
 /**
  * 距离测量类
  */
-class DistanceMeasure extends Measure {
+class AzimuthAndDistanceMeasure extends Measure {
   protected _updateLabelFunc(positions: Cartesian3[]) {
     this._labels.removeAll();
-    console.log(positions);
     positions.forEach(position => {
       const newLabel = {
         position,
@@ -66,7 +65,7 @@ class DistanceMeasure extends Measure {
     for (let i = 0; i < num; i += 1) {
       const label = this._labels.get(i);
       if (i === 0) {
-        label.text = this._locale.start;
+        // label.text = this._locale.start;
         continue;
       } else {
         const newDis = +this.getDistance(positions[i - 1], positions[i]).toFixed(2);
@@ -75,7 +74,7 @@ class DistanceMeasure extends Measure {
 
         distance += newDis;
         distance = +distance.toFixed(2);
-        const unitedDistance = +convertLength(distance, 'meters', this._units).toFixed(2);
+        // const unitedDistance = +convertLength(distance, 'meters', this._units).toFixed(2);
 
         label.text =
           `${this._locale.formatAngle(newAngle)}` +
@@ -92,4 +91,4 @@ class DistanceMeasure extends Measure {
   }
 }
 
-export default DistanceMeasure;
+export default AzimuthAndDistanceMeasure;

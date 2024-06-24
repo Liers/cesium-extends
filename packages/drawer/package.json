@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hongfaqiu/cesium-extends.git",
+    "url": "git+https://github.com/Liers/cesium-extends.git",
     "directory": "packages/drawer"
   },
   "scripts": {
@@ -24,7 +24,7 @@
     "cesium",
     "drawer"
   ],
-  "author": "hongfaqiu",
+  "author": "unshiliu",
   "license": "MIT",
   "peerDependencies": {
     "cesium": "*"

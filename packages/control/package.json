@@ -1,6 +1,6 @@
 {
-  "name": "@cesium-extends/compass",
-  "version": "1.2.1",
+  "name": "@cesium-extends/control",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -13,8 +13,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hongfaqiu/cesium-extends.git",
-    "directory": "packages/compass"
+    "url": "git+https://github.com/Liers/cesium-extends.git",
+    "directory": "packages/control"
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
@@ -22,18 +22,14 @@
   },
   "keywords": [
     "cesium",
-    "widget",
-    "compass"
+    "control"
   ],
-  "author": "hongfaqiu",
+  "author": "unshiliu",
   "license": "MIT",
   "peerDependencies": {
     "cesium": "*"
   },
   "devDependencies": {
     "cesium": "1.70.0"
-  },
-  "dependencies": {
-    "@cesium-extends/common": "workspace:*"
   }
 }

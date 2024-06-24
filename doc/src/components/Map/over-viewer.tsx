@@ -1,43 +1,41 @@
 import { Viewer } from 'cesium';
 import React, { useEffect, useRef } from 'react';
-import { SyncViewer } from 'cesium-extends';
+import { OverViewer } from 'cesium-extends';
 
 import { initMap } from '../../utils/initMap';
 
 interface MapProps {}
 
 const Map: React.FC<MapProps> = () => {
-  const leftViewer = useRef<Viewer>();
-  const rightViewer = useRef<Viewer>();
-  const syncViewer = useRef<SyncViewer>();
+  const parentViewer = useRef<Viewer>();
+  const overView = useRef<OverViewer>();
 
   useEffect(() => {
-    leftViewer.current = initMap('left-container');
-    rightViewer.current = initMap('right-container');
+    parentViewer.current = initMap('parent-container');
+    const overViewerContainerID = 'overview-container';
 
-    if (leftViewer.current && rightViewer.current) {
-      syncViewer.current = new SyncViewer(
-        leftViewer.current,
-        rightViewer.current,
+    if (parentViewer.current && overViewerContainerID) {
+      overView.current = new OverViewer(
+        parentViewer.current,
+        overViewerContainerID,
       );
-      syncViewer.current.start();
+      overView.current.start();
     }
 
     return () => {
-      leftViewer.current?.destroy();
-      rightViewer.current?.destroy();
-      syncViewer.current?.destroy();
+      parentViewer.current?.destroy();
+      overView.current?.destroy();
     };
   }, []);
 
   return (
     <div
-      className="sync-viewer"
+      className="over-viewer"
       style={{ width: '100%', height: '100%', display: 'flex' }}
     >
-      <div id="left-container" style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <div id="parent-container" style={{ width: '100%', height: '100%', position: 'relative' }}>
         <div
-          id="right-container"
+          id="overview-container"
           style={{
             position: 'absolute',
             zIndex: 9,

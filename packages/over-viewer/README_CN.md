@@ -1,23 +1,23 @@
-# @cesium-extends/sync-viewer
+# @cesium-extends/over-viewer
 
-`@cesium-extends/sync-viewer` 是一个用于同步两个 Cesium Viewer 视图的 npm 包。
+`@cesium-extends/over-viewer` 是一个用于同步两个 Cesium Viewer 视图的 npm 包。
 
 ## 安装
 
 ```bash
-npm install @cesium-extends/sync-viewer
+npm install @cesium-extends/over-viewer
 ```
 
 ## 使用
 
 ```js
 import { Viewer } from "cesium";
-import SyncViewer from "@cesium-extends/sync-viewer";
+import OverViewer from "@cesium-extends/over-viewer";
 
 const leftViewer = new Viewer("left-container");
 const rightViewer = new Viewer("right-container");
 
-const syncViewer = new SyncViewer(leftViewer, rightViewer);
+const syncViewer = new OverViewer(leftViewer, rightViewer);
 
 // 销毁
 syncViewer.destroy();
@@ -31,7 +31,7 @@ syncViewer.destroy();
 | ----------------- | -------- | ------------------------------------------------- |
 | percentageChanged | `number` | 相机 zoom 改变时距离改变的百分比，默认为 `0.01`。 |
 
-### `SyncViewer`
+### `OverViewer`
 
 #### 构造函数
 

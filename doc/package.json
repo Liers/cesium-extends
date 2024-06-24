@@ -11,7 +11,7 @@
     "prepare": "dumi setup"
   },
   "authors": [
-    "hongfaqiu"
+    "unshiliu"
   ],
   "license": "MIT",
   "devDependencies": {

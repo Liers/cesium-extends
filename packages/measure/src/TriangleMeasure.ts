@@ -1,14 +1,10 @@
 import {
   Cartesian3,
-  Cartographic,
   PolylineGraphics,
   Color,
-  VerticalOrigin,
   Cartesian2,
-  HorizontalOrigin,
   HeightReference,
   NearFarScalar,
-  LabelStyle,
 } from 'cesium';
 import Measure from './Measure';
 import Label from 'cesium/Source/Scene/Label';
@@ -24,14 +20,13 @@ class TriangleMeasure extends Measure {
     if (num < 4) return;
     // positions中第一点为起点，第二点为高度差点，第三点为终点
     // 分别计算起点到高度差点的距离和高度差以及水平距离
-    const distance = getDistance(positions[0], positions[2]).toFixed(2);
-    const heightDifference = getHeightDifference(positions[0], positions[1]).toFixed(2);
-    const horizontalDistance = getDistance(positions[1], positions[2]).toFixed(2);
+    const distance = this.formateDistance(getDistance(positions[0], positions[2]));
+    const heightDifference = this.formateDistance(getHeightDifference(positions[0], positions[1]));
+    const horizontalDistance = this.formateDistance(getDistance(positions[1], positions[2]));
 
     // 计算夹角
     const angle = getAngleDeflectToHorizontal(positions);
     for (let i = 0; i < 3; i += 1) {
-      console.log(`positions-${i}`, Cartographic.fromCartesian(positions[i]));
       // @ts-ignore
       const label: Label = {
         ...this._labelStyle,
@@ -39,28 +34,29 @@ class TriangleMeasure extends Measure {
       }
       switch (i) {
         case 0:
-          // label.horizontalOrigin = HorizontalOrigin.LEFT;
-          // label.verticalOrigin = VerticalOrigin.TOP;
           label.position = getMiddlePoint(positions[0], positions[2]);
-          label.text = `空间距离: ${distance}米`;
+          label.text = `空间距离: ${distance}`;
           break;
         case 1:
-          // label.horizontalOrigin = HorizontalOrigin.LEFT;
-          // label.verticalOrigin = VerticalOrigin.CENTER;
           label.position = getMiddlePoint(positions[0], positions[1]);
-          label.text = `高度差: ${heightDifference}米` + `\n角度: ${angle}`;
+          label.text = `高度差: ${heightDifference}` + `\n角度: ${angle}`;
           break;
         case 2:
-          // label.horizontalOrigin = HorizontalOrigin.CENTER;
-          // label.verticalOrigin = VerticalOrigin.TOP;
           label.position = getMiddlePoint(positions[1], positions[2]);
-          label.text = `水平距离: ${horizontalDistance}米`;
+          label.text = `水平距离: ${horizontalDistance}`;
           break;
         default:
           break;
       }
       this._labels.add(label);
     }
+  }
+
+  formateDistance(distance: number): string {
+    if (distance < 1000) {
+      return distance.toFixed(2) + '米';
+    }
+    return (distance / 1000).toFixed(2) + '公里';
   }
 
   start(style: PolylineGraphics.ConstructorOptions = {}) {

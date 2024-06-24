@@ -1,24 +1,24 @@
-# @cesium-extends/sync-viewer
+# @cesium-extends/over-viewer
 
-`@cesium-extends/sync-viewer` is an npm package for synchronizing two Cesium Viewer instances.
+`@cesium-extends/over-viewer` is an npm package for synchronizing two Cesium Viewer instances.
 [中文 Readme](./README_CN.md)
 
 ## Installation
 
 ```bash
-npm install @cesium-extends/sync-viewer
+npm install @cesium-extends/over-viewer
 ```
 
 ## Usage
 
 ```js
 import { Viewer } from "cesium";
-import SyncViewer from "@cesium-extends/sync-viewer";
+import OverViewer from "@cesium-extends/over-viewer";
 
 const leftViewer = new Viewer("left-container");
 const rightViewer = new Viewer("right-container");
 
-const syncViewer = new SyncViewer(leftViewer, rightViewer);
+const syncViewer = new OverViewer(leftViewer, rightViewer);
 
 // Destroy
 syncViewer.destroy();
@@ -32,7 +32,7 @@ syncViewer.destroy();
 | ----------------- | -------- | ------------------------------------------------------------ |
 | percentageChanged | `number` | The percentage of distance changed when the camera zooms in. |
 
-### `SyncViewer`
+### `OverViewer`
 
 #### Constructor
 

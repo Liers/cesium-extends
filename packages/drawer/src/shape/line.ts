@@ -8,6 +8,11 @@ import type { EventArgs } from '@cesium-extends/subscriber';
 export default class Line extends BasicGraphices implements LifeCycle {
   dropPoint(event: EventArgs): void {
     this._dropPoint(event, this.createShape.bind(this));
+
+    // 判断当前点位是否为第二个点位，如果是则结束绘制
+    if (this.painter.breakPointEntities.length === 2) {
+      this.isComplete = true;
+    }
   }
 
   playOff(): Entity {

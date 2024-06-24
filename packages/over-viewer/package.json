@@ -1,5 +1,5 @@
 {
-  "name": "@cesium-extends/sync-viewer",
+  "name": "@cesium-extends/over-viewer",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,8 +13,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hongfaqiu/cesium-extends.git",
-    "directory": "packages/sync-viewer"
+    "url": "git+https://github.com/Liers/cesium-extends.git",
+    "directory": "packages/over-viewer"
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
@@ -22,9 +22,9 @@
   },
   "keywords": [
     "cesium",
-    "sync-viewer"
+    "over-viewer"
   ],
-  "author": "hongfaqiu",
+  "author": "unshiliu",
   "license": "MIT",
   "peerDependencies": {
     "cesium": "*"
