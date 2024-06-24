@@ -5,14 +5,14 @@ group: 扩展
 order: 3
 ---
 
-# @cesium-163-extends/control
+# @cesium163-extends/control
 
-一款基于 [@cesium-163-extends/common](https://www.npmjs.com/package/@cesium-163-extends/common) 库的[Cesium](https://cesium.com/)控件插件。
+一款基于 [@cesium163-extends/common](https://www.npmjs.com/package/@cesium163-extends/common) 库的[Cesium](https://cesium.com/)控件插件。
 
 ## 安装
 
 ```bash
-npm install @cesium-163-extends/control
+npm install @cesium163-extends/control
 ```
 
 ## 使用方法
@@ -20,7 +20,7 @@ npm install @cesium-163-extends/control
 `Control` 可在 Cesium 应用程序中用于开启/关闭光照效果。要使用该小部件，首先将其导入到您的项目中：
 
 ```javascript
-import Control from '@cesium-163-extends/control';
+import Control from '@cesium163-extends/control';
 ```
 
 接下来，创建小部件的一个新实例并将其传递给您的 Cesium Viewer 实例：

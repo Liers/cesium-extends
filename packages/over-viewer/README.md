@@ -1,19 +1,19 @@
-# @cesium-163-extends/over-viewer
+# @cesium163-extends/over-viewer
 
-`@cesium-163-extends/over-viewer` is an npm package for synchronizing two Cesium Viewer instances.
+`@cesium163-extends/over-viewer` is an npm package for synchronizing two Cesium Viewer instances.
 [中文 Readme](./README_CN.md)
 
 ## Installation
 
 ```bash
-npm install @cesium-163-extends/over-viewer
+npm install @cesium163-extends/over-viewer
 ```
 
 ## Usage
 
 ```js
 import { Viewer } from "cesium";
-import OverViewer from "@cesium-163-extends/over-viewer";
+import OverViewer from "@cesium163-extends/over-viewer";
 
 const leftViewer = new Viewer("left-container");
 const rightViewer = new Viewer("right-container");

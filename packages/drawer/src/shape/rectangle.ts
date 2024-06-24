@@ -3,7 +3,7 @@ import { CallbackProperty, Entity, JulianDate, Rectangle as CesiumRectangle, Car
 import BasicGraphices from '../base';
 
 import type { Rectangle as TRectangle } from 'cesium';
-import type { EventArgs } from '@cesium-163-extends/subscriber';
+import type { EventArgs } from '@cesium163-extends/subscriber';
 import type { LifeCycle } from '../base';
 
 export default class Rectangle extends BasicGraphices implements LifeCycle {

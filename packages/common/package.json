@@ -1,5 +1,5 @@
 {
-  "name": "@cesium-163-extends/common",
+  "name": "@cesium163-extends/common",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",

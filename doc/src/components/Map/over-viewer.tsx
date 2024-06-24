@@ -1,6 +1,6 @@
 import { Viewer } from 'cesium';
 import React, { useEffect, useRef } from 'react';
-import { OverViewer } from 'cesium-163-extends';
+import { OverViewer } from 'cesium163-extends';
 
 import { initMap } from '../../utils/initMap';
 

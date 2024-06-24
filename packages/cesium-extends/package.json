@@ -1,5 +1,5 @@
 {
-  "name": "cesium-163-extends",
+  "name": "cesium163-extends",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -30,12 +30,12 @@
     "cesium": "*"
   },
   "dependencies": {
-    "@cesium-163-extends/drawer": "1.0.0",
-    "@cesium-163-extends/measure": "1.0.0",
-    "@cesium-163-extends/popup": "1.0.0",
-    "@cesium-163-extends/subscriber": "1.0.0",
-    "@cesium-163-extends/over-viewer": "1.0.0",
-    "@cesium-163-extends/control": "1.0.0",
-    "@cesium-163-extends/tooltip": "1.0.0"
+    "@cesium163-extends/drawer": "1.0.0",
+    "@cesium163-extends/measure": "1.0.0",
+    "@cesium163-extends/popup": "1.0.0",
+    "@cesium163-extends/subscriber": "1.0.0",
+    "@cesium163-extends/over-viewer": "1.0.0",
+    "@cesium163-extends/control": "1.0.0",
+    "@cesium163-extends/tooltip": "1.0.0"
   }
 }

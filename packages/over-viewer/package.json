@@ -1,5 +1,5 @@
 {
-  "name": "@cesium-163-extends/over-viewer",
+  "name": "@cesium163-extends/over-viewer",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",

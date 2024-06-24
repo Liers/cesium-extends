@@ -6,9 +6,9 @@ const cesiumWorkers = '../Build/Cesium/Workers';
 
 export default defineConfig({
   themeConfig: {
-    name: 'cesium-163-extends',
+    name: 'cesium163-extends',
     socialLinks: {
-      github: 'https://github.com/Liers/cesium-163-extends',
+      github: 'https://github.com/Liers/cesium163-extends',
     },
     logo: "/logo.svg"
   },

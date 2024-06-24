@@ -83,7 +83,7 @@ importers:
       cesium:
         specifier: 1.70.0
         version: 1.70.0
-      cesium-163-extends:
+      cesium163-extends:
         specifier: 1.0.0
         version: link:../packages/cesium-extends
       react:
@@ -102,25 +102,25 @@ importers:
 
   packages/cesium-extends:
     dependencies:
-      '@cesium-163-extends/control':
+      '@cesium163-extends/control':
         specifier: 1.0.0
         version: link:../control
-      '@cesium-163-extends/drawer':
+      '@cesium163-extends/drawer':
         specifier: 1.0.0
         version: link:../drawer
-      '@cesium-163-extends/measure':
+      '@cesium163-extends/measure':
         specifier: 1.0.0
         version: link:../measure
-      '@cesium-163-extends/over-viewer':
+      '@cesium163-extends/over-viewer':
         specifier: 1.0.0
         version: link:../over-viewer
-      '@cesium-163-extends/popup':
+      '@cesium163-extends/popup':
         specifier: 1.0.0
         version: link:../popup
-      '@cesium-163-extends/subscriber':
+      '@cesium163-extends/subscriber':
         specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
+      '@cesium163-extends/tooltip':
         specifier: 1.0.0
         version: link:../tooltip
       cesium:
@@ -141,10 +141,10 @@ importers:
 
   packages/drawer:
     dependencies:
-      '@cesium-163-extends/subscriber':
+      '@cesium163-extends/subscriber':
         specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
+      '@cesium163-extends/tooltip':
         specifier: 1.0.0
         version: link:../tooltip
     devDependencies:
@@ -154,13 +154,13 @@ importers:
 
   packages/measure:
     dependencies:
-      '@cesium-163-extends/drawer':
+      '@cesium163-extends/drawer':
         specifier: 1.0.0
         version: link:../drawer
-      '@cesium-163-extends/subscriber':
+      '@cesium163-extends/subscriber':
         specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
+      '@cesium163-extends/tooltip':
         specifier: 1.0.0
         version: link:../tooltip
       '@turf/area':
@@ -203,11 +203,11 @@ importers:
 
   packages/tooltip:
     dependencies:
-      '@cesium-163-extends/common':
+      '@cesium163-extends/common':
         specifier: 1.0.0
         version: link:../common
     devDependencies:
-      '@cesium-163-extends/subscriber':
+      '@cesium163-extends/subscriber':
         specifier: 1.0.0
         version: link:../subscriber
       cesium:

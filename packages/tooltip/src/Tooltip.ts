@@ -1,4 +1,4 @@
-import { DomUtil, Widget } from '@cesium-163-extends/common';
+import { DomUtil, Widget } from '@cesium163-extends/common';
 
 import type { Cartesian2, Viewer } from 'cesium';
 
