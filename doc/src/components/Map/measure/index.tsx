@@ -6,7 +6,7 @@ import {
   AzimuthAndDistanceMeasure,
   TriangleMeasure,
   Measure,
-} from 'cesium-163-extends';
+} from 'cesium163-extends';
 import './index.less';
 
 interface MapProps {}

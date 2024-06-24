@@ -83,8 +83,8 @@ importers:
       cesium:
         specifier: 1.70.0
         version: 1.70.0
-      cesium-163-extends:
-        specifier: workspace:*
+      cesium163-extends:
+        specifier: 1.0.0
         version: link:../packages/cesium-extends
       react:
         specifier: ^18.2.0
@@ -102,26 +102,26 @@ importers:
 
   packages/cesium-extends:
     dependencies:
-      '@cesium-163-extends/control':
-        specifier: workspace:*
+      '@cesium163-extends/control':
+        specifier: 1.0.0
         version: link:../control
-      '@cesium-163-extends/drawer':
-        specifier: workspace:*
+      '@cesium163-extends/drawer':
+        specifier: 1.0.0
         version: link:../drawer
-      '@cesium-163-extends/measure':
-        specifier: workspace:*
+      '@cesium163-extends/measure':
+        specifier: 1.0.0
         version: link:../measure
-      '@cesium-163-extends/over-viewer':
-        specifier: workspace:*
+      '@cesium163-extends/over-viewer':
+        specifier: 1.0.0
         version: link:../over-viewer
-      '@cesium-163-extends/popup':
-        specifier: workspace:*
+      '@cesium163-extends/popup':
+        specifier: 1.0.0
         version: link:../popup
-      '@cesium-163-extends/subscriber':
-        specifier: workspace:*
+      '@cesium163-extends/subscriber':
+        specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
-        specifier: workspace:*
+      '@cesium163-extends/tooltip':
+        specifier: 1.0.0
         version: link:../tooltip
       cesium:
         specifier: '*'
@@ -141,11 +141,11 @@ importers:
 
   packages/drawer:
     dependencies:
-      '@cesium-163-extends/subscriber':
-        specifier: workspace:*
+      '@cesium163-extends/subscriber':
+        specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
-        specifier: workspace:*
+      '@cesium163-extends/tooltip':
+        specifier: 1.0.0
         version: link:../tooltip
     devDependencies:
       cesium:
@@ -154,14 +154,14 @@ importers:
 
   packages/measure:
     dependencies:
-      '@cesium-163-extends/drawer':
-        specifier: workspace:*
+      '@cesium163-extends/drawer':
+        specifier: 1.0.0
         version: link:../drawer
-      '@cesium-163-extends/subscriber':
-        specifier: workspace:*
+      '@cesium163-extends/subscriber':
+        specifier: 1.0.0
         version: link:../subscriber
-      '@cesium-163-extends/tooltip':
-        specifier: workspace:*
+      '@cesium163-extends/tooltip':
+        specifier: 1.0.0
         version: link:../tooltip
       '@turf/area':
         specifier: ^6.5.0
@@ -203,12 +203,12 @@ importers:
 
   packages/tooltip:
     dependencies:
-      '@cesium-163-extends/common':
-        specifier: workspace:*
+      '@cesium163-extends/common':
+        specifier: 1.0.0
         version: link:../common
     devDependencies:
-      '@cesium-163-extends/subscriber':
-        specifier: workspace:*
+      '@cesium163-extends/subscriber':
+        specifier: 1.0.0
         version: link:../subscriber
       cesium:
         specifier: 1.70.0

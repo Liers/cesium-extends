@@ -3,7 +3,7 @@ import { CallbackProperty, ClassificationType, Entity, JulianDate } from 'cesium
 import BasicGraphices from '../base';
 
 import type { Cartesian3 } from 'cesium';
-import type { EventArgs } from '@cesium-163-extends/subscriber';
+import type { EventArgs } from '@cesium163-extends/subscriber';
 import type { LifeCycle } from '../base';
 
 export default class Circle extends BasicGraphices implements LifeCycle {

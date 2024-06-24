@@ -1,8 +1,8 @@
 ---
 title: Cesium extends
 hero:
-  title: cesium-163-extends
-  description: cesium-163-extends
+  title: cesium163-extends
+  description: cesium163-extends
   actions:
     - text: Document
       link: /doc

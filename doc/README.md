@@ -1,4 +1,4 @@
-# cesium-163-extends
+# cesium163-extends
 
 A static site base on [dumi](https://d.umijs.org).
 

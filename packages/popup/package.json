@@ -1,6 +1,6 @@
 {
-  "name": "@cesium-163-extends/popup",
-  "version": "1.0.0-beta",
+  "name": "@cesium163-extends/popup",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

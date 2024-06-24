@@ -3,7 +3,7 @@ import { ArcType, CallbackProperty, ClassificationType, defined, Entity, Polygon
 import BasicGraphices from '../base';
 
 import type { Cartesian3, Color, PolygonGraphics, PolylineGraphics } from 'cesium';
-import type { EventArgs } from '@cesium-163-extends/subscriber';
+import type { EventArgs } from '@cesium163-extends/subscriber';
 import type { LifeCycle } from '../base';
 
 export default class Polygon extends BasicGraphices implements LifeCycle {

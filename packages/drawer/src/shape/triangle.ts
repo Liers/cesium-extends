@@ -12,7 +12,7 @@ import {
 import BasicGraphices from '../base';
 
 import type { LifeCycle } from '../base';
-import type { EventArgs } from '@cesium-163-extends/subscriber';
+import type { EventArgs } from '@cesium163-extends/subscriber';
 
 export default class Triangle extends BasicGraphices implements LifeCycle {
   

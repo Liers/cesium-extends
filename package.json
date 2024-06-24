@@ -1,11 +1,11 @@
 {
-  "name": "cesium-163-extends-monorepo",
-  "version": "1.0.0-beta",
+  "name": "cesium163-extends-monorepo",
+  "version": "1.0.0",
   "private": false,
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.6.7",
   "type": "module",
-  "homepage": "https://liers.github.io/cesium-163-extends",
+  "homepage": "https://liers.github.io/cesium163-extends",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
