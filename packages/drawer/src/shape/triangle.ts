@@ -62,7 +62,8 @@ export default class Triangle extends BasicGraphices implements LifeCycle {
   }
 
   cancel(): void {
-    this._cancel(this.createShape.bind(this));
+    // this._cancel(this.createShape.bind(this));
+    return;
   }
 
   createShape(positions: Cartesian3[] | CallbackProperty, isDynamic = false): Entity {

@@ -15,9 +15,12 @@ import { getAngleDeflectToHorizontal, getDistance, getHeightDifference, getMiddl
  */
 class TriangleMeasure extends Measure {
   protected _updateLabelFunc(positions: Cartesian3[]) {
+    console.log('positions', positions);
     this._labels.removeAll();
     const num = positions.length;
-    if (num < 4) return;
+    if (num < 4) {
+      return;
+    }
     // positions中第一点为起点，第二点为高度差点，第三点为终点
     // 分别计算起点到高度差点的距离和高度差以及水平距离
     const distance = this.formateDistance(getDistance(positions[0], positions[2]));

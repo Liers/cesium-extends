@@ -1,11 +1,15 @@
-import { Cartesian3, Viewer, Math as CMath } from 'cesium';
+import { Cartesian3, Viewer, Math as CMath, LabelCollection } from 'cesium';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { initMap } from '@/utils/initMap';
-import { AzimuthAndDistanceMeasure, TriangleMeasure, Measure } from 'cesium-extends';
+import {
+  AzimuthAndDistanceMeasure,
+  TriangleMeasure,
+  Measure,
+} from 'cesium-extends';
 import './index.less';
 
-interface MapProps { }
+interface MapProps {}
 
 const measureOptions: {
   label: string;
@@ -25,10 +29,13 @@ const measureOptions: {
 ];
 
 const Map: React.FC<MapProps> = () => {
-  const viewer = useRef<Viewer>()
+  const viewer = useRef<Viewer>();
   const measure = useRef<Measure>();
 
-  const onChangeTool = (name: string | null, Tool: typeof Measure | null = null) => {
+  const onChangeTool = (
+    name: string | null,
+    Tool: typeof Measure | null = null,
+  ) => {
     if (!viewer.current) return;
 
     if (name && Tool) {
@@ -51,8 +58,8 @@ const Map: React.FC<MapProps> = () => {
           tips: {
             init: '点击绘制',
             start: '左键添加点，双击结束绘制',
-          }
-        }
+          },
+        },
       });
       measure.current.start();
     }
@@ -60,7 +67,7 @@ const Map: React.FC<MapProps> = () => {
 
   useEffect(() => {
     viewer.current = initMap('cesiumContainer');
-    
+
     viewer.current.camera.setView({
       destination: Cartesian3.fromDegrees(138.43, 35.21, 5000),
       orientation: {
@@ -70,28 +77,47 @@ const Map: React.FC<MapProps> = () => {
       },
     });
 
-
     return () => {
       measure.current?.destroy();
       measure.current = undefined;
-      viewer.current?.destroy()
-    }
+      viewer.current?.destroy();
+    };
   }, []);
 
   const clear = () => {
-    measure.current?.end()
-  }
+    measure.current?.end();
+    const labelCollections: LabelCollection[] = [];
+    const length = viewer.current?.scene.primitives.length;
+    if (length) {
+      for (let i = 0; i < length; i++) {
+        const primitive = viewer.current?.scene.primitives.get(i);
+        if (primitive instanceof LabelCollection && primitive.length > 0) {
+          labelCollections.push(primitive);
+        }
+      }
+    }
+    labelCollections.forEach((item) => {
+      viewer.current?.scene.primitives.remove(item);
+    });
 
-  return <div id="cesiumContainer">
-    <div className='draw-tools'>
-      {measureOptions.map((item) => (
-        <button key={item.key} onClick={() => onChangeTool(item.key, item.tool)}>
-          {item.label}
-        </button>
-      ))}
-      <button onClick={clear}>清除</button>
+    viewer.current?.entities.removeAll();
+  };
+
+  return (
+    <div id="cesiumContainer">
+      <div className="draw-tools">
+        {measureOptions.map((item) => (
+          <button
+            key={item.key}
+            onClick={() => onChangeTool(item.key, item.tool)}
+          >
+            {item.label}
+          </button>
+        ))}
+        <button onClick={clear}>清除</button>
+      </div>
     </div>
-  </div>
+  );
 };
 
 export default Map;
