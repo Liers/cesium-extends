@@ -1,9 +1,9 @@
-export * from '@cesium163-extends/subscriber';
-export * from '@cesium163-extends/tooltip';
-export * from '@cesium163-extends/drawer';
-export * from '@cesium163-extends/measure';
+export * from './subscriber';
+export * from './tooltip';
+export * from './drawer';
+export * from './measure';
 
-export { default as Drawer } from '@cesium163-extends/drawer';
-export { default as Popup } from '@cesium163-extends/popup';
-export { default as OverViewer } from '@cesium163-extends/over-viewer';
-export { default as Control } from '@cesium163-extends/control';
+export { default as Drawer } from './drawer';
+export { default as Popup } from './popup';
+export { default as OverViewer } from './over-viewer';
+export { default as Control } from './control';

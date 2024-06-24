@@ -1,6 +1,7 @@
 import { builtinModules } from 'module'
 import esbuild from 'rollup-plugin-esbuild'
 import dts from 'rollup-plugin-dts'
+import styles from 'rollup-plugin-styles'
 import { defineConfig } from 'rollup'
 import pkg from './package.json' assert { type: 'json' };
 
@@ -13,6 +14,10 @@ const external = [
 const plugins = [
   esbuild({
     target: 'node14',
+  }),
+  styles({
+    minimize: true,
+    extensions: ['.scss']
   }),
 ]
 
@@ -36,7 +41,10 @@ export default defineConfig([
       entryFileNames: '[name].d.ts',
       format: 'esm',
     },
-    external,
+    external: [
+      ...external,
+      /\.scss$/u,
+    ],
     plugins: [
       dts({ respectExternal: true }),
     ],

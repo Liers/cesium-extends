@@ -36,10 +36,6 @@
     "@cesium163-extends/drawer": "1.0.0",
     "@cesium163-extends/subscriber": "1.0.0",
     "@cesium163-extends/tooltip": "1.0.0",
-    "@turf/area": "^6.5.0",
-    "@turf/helpers": "^6.5.0",
-    "@turf/intersect": "^6.5.0",
-    "@turf/random": "^6.5.0",
-    "@turf/voronoi": "^6.5.0"
+    "@turf/helpers": "^6.5.0"
   }
 }
