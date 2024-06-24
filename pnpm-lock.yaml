@@ -80,7 +80,7 @@ importers:
       cesium:
         specifier: 1.70.0
         version: 1.70.0
-      cesium-extends:
+      cesium-163-extends:
         specifier: workspace:*
         version: link:../packages/cesium-extends
       react:
@@ -99,25 +99,25 @@ importers:
 
   packages/cesium-extends:
     dependencies:
-      '@cesium-extends/control':
+      '@cesium-163-extends/control':
         specifier: workspace:*
         version: link:../control
-      '@cesium-extends/drawer':
+      '@cesium-163-extends/drawer':
         specifier: workspace:*
         version: link:../drawer
-      '@cesium-extends/measure':
+      '@cesium-163-extends/measure':
         specifier: workspace:*
         version: link:../measure
-      '@cesium-extends/over-viewer':
+      '@cesium-163-extends/over-viewer':
         specifier: workspace:*
         version: link:../over-viewer
-      '@cesium-extends/popup':
+      '@cesium-163-extends/popup':
         specifier: workspace:*
         version: link:../popup
-      '@cesium-extends/subscriber':
+      '@cesium-163-extends/subscriber':
         specifier: workspace:*
         version: link:../subscriber
-      '@cesium-extends/tooltip':
+      '@cesium-163-extends/tooltip':
         specifier: workspace:*
         version: link:../tooltip
       cesium:
@@ -138,10 +138,10 @@ importers:
 
   packages/drawer:
     dependencies:
-      '@cesium-extends/subscriber':
+      '@cesium-163-extends/subscriber':
         specifier: workspace:*
         version: link:../subscriber
-      '@cesium-extends/tooltip':
+      '@cesium-163-extends/tooltip':
         specifier: workspace:*
         version: link:../tooltip
     devDependencies:
@@ -151,13 +151,13 @@ importers:
 
   packages/measure:
     dependencies:
-      '@cesium-extends/drawer':
+      '@cesium-163-extends/drawer':
         specifier: workspace:*
         version: link:../drawer
-      '@cesium-extends/subscriber':
+      '@cesium-163-extends/subscriber':
         specifier: workspace:*
         version: link:../subscriber
-      '@cesium-extends/tooltip':
+      '@cesium-163-extends/tooltip':
         specifier: workspace:*
         version: link:../tooltip
       '@turf/area':
@@ -200,11 +200,11 @@ importers:
 
   packages/tooltip:
     dependencies:
-      '@cesium-extends/common':
+      '@cesium-163-extends/common':
         specifier: workspace:*
         version: link:../common
     devDependencies:
-      '@cesium-extends/subscriber':
+      '@cesium-163-extends/subscriber':
         specifier: workspace:*
         version: link:../subscriber
       cesium:

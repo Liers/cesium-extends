@@ -5,21 +5,21 @@ group: 扩展
 order: 1
 ---
 
-# @cesium-extends/measure
+# @cesium-163-extends/measure
 
-@cesium-extends/measure 是一个基于 Cesium 实现的测量工具，支持方位角测量和三角测量。
+@cesium-163-extends/measure 是一个基于 Cesium 实现的测量工具，支持方位角测量和三角测量。
 
 ## 安装
 
 通过 npm 安装：
 
 ```bash
-npm install @cesium-extends/measure --save
+npm install @cesium-163-extends/measure --save
 ```
 
 ## 使用
 
-在项目中引入`@cesium-extends/measure`模块，然后实例化对应的测量类即可进行测量。
+在项目中引入`@cesium-163-extends/measure`模块，然后实例化对应的测量类即可进行测量。
 
 ### AzimuthAndDistanceMeasure
 
@@ -27,7 +27,7 @@ npm install @cesium-extends/measure --save
 
 ```typescript
 import { Viewer } from 'cesium';
-import { AzimuthAndDistanceMeasure } from '@cesium-extends/measure';
+import { AzimuthAndDistanceMeasure } from '@cesium-163-extends/measure';
 
 const viewer = new Viewer('cesiumContainer');
 const azimuthAndDistanceMeasure = new AzimuthAndDistanceMeasure(viewer, {
@@ -46,7 +46,7 @@ azimuthAndDistanceMeasure.start();
 
 ```typescript
 import { Viewer } from 'cesium';
-import { TriangleMeasure } from '@cesium-extends/measure';
+import { TriangleMeasure } from '@cesium-163-extends/measure';
 
 const viewer = new Viewer('cesiumContainer');
 const TriangleMeasure = new TriangleMeasure(viewer, {

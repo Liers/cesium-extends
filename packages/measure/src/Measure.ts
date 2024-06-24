@@ -8,12 +8,12 @@ import {
   HeightReference
 } from 'cesium';
 
-import {MouseTooltip} from '@cesium-extends/tooltip';
-import Drawer from '@cesium-extends/drawer';
+import {MouseTooltip} from '@cesium-163-extends/tooltip';
+import Drawer from '@cesium-163-extends/drawer';
 
 import type { Units } from '@turf/helpers';
 import type { Cartesian3, Entity, Viewer } from 'cesium';
-import type { DrawOption } from '@cesium-extends/drawer';
+import type { DrawOption } from '@cesium-163-extends/drawer';
 import { formatArea, formatLength, formatAngle } from './utils';
 
 export type MeasureUnits = Units;

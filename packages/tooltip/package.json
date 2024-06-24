@@ -1,5 +1,5 @@
 {
-  "name": "@cesium-extends/tooltip",
+  "name": "@cesium-163-extends/tooltip",
   "version": "1.2.2",
   "type": "module",
   "main": "./dist/index.js",
@@ -31,10 +31,10 @@
     "cesium": "*"
   },
   "devDependencies": {
-    "@cesium-extends/subscriber": "workspace:*",
+    "@cesium-163-extends/subscriber": "workspace:*",
     "cesium": "1.70.0"
   },
   "dependencies": {
-    "@cesium-extends/common": "workspace:*"
+    "@cesium-163-extends/common": "workspace:*"
   }
 }

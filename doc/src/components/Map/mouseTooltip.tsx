@@ -1,6 +1,6 @@
 import { Viewer } from 'cesium';
 import React, { useEffect } from 'react';
-import { MouseTooltip } from 'cesium-extends';
+import { MouseTooltip } from 'cesium-163-extends';
 
 import { initMap } from '../../utils/initMap';
 import './index.less'

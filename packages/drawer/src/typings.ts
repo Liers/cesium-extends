@@ -8,7 +8,7 @@ import type {
   PolylineGraphics,
   RectangleGraphics,
 } from 'cesium';
-import type { EventArgs, EventType } from '@cesium-extends/subscriber';
+import type { EventArgs, EventType } from '@cesium-163-extends/subscriber';
 import type { BasicGraphicesOptions } from './base';
 import Drawer from '.';
 

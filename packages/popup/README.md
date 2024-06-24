@@ -1,22 +1,22 @@
-# @cesium-extends/popup
+# @cesium-163-extends/popup
 
 A lightweight and easy-to-use popup component for CesiumJS.
 [中文 Readme](./README_CN.md)
 
 ## Installation
 
-To install `@cesium-extends/popup`, run:
+To install `@cesium-163-extends/popup`, run:
 
 ```bash
-npm install @cesium-extends/popup
+npm install @cesium-163-extends/popup
 ```
 
 ## Usage
 
-Here's an example of how to use `@cesium-extends/popup`:
+Here's an example of how to use `@cesium-163-extends/popup`:
 
 ```javascript
-import Popup from "@cesium-extends/popup";
+import Popup from "@cesium-163-extends/popup";
 import { Viewer } from "cesium";
 
 const viewer = new Viewer("cesiumContainer");

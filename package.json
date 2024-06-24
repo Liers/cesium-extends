@@ -1,5 +1,5 @@
 {
-  "name": "cesium-extends-monorepo",
+  "name": "cesium-163-extends-monorepo",
   "private": true,
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.6.7",

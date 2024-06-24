@@ -1,4 +1,4 @@
-# @cesium-extends/drawer
+# @cesium-163-extends/drawer
 
 A drawing tool library based on Cesium, supporting commonly used shapes such as point, line, polygon, circle, etc.
 [中文 Readme](./README_CN.md)
@@ -8,13 +8,13 @@ A drawing tool library based on Cesium, supporting commonly used shapes such as 
 Using npm:
 
 ```bash
-npm install @cesium-extends/drawer --save
+npm install @cesium-163-extends/drawer --save
 ```
 
 ## Usage
 
 ```javascript
-import Drawer from "@cesium-extends/drawer";
+import Drawer from "@cesium-163-extends/drawer";
 import Cesium from "cesium";
 
 // Initialize the viewer

@@ -1,6 +1,6 @@
 import { Color, defaultValue, Entity, JulianDate, PolylineArrowMaterialProperty } from 'cesium';
-import { MouseTooltip } from '@cesium-extends/tooltip';
-import Subscriber from '@cesium-extends/subscriber';
+import { MouseTooltip } from '@cesium-163-extends/tooltip';
+import Subscriber from '@cesium-163-extends/subscriber';
 
 import Painter from './painter';
 import Circle from './shape/circle';
@@ -11,7 +11,7 @@ import Rectangle from './shape/rectangle';
 import Triangle from './shape/triangle';
 
 import type { Viewer } from 'cesium';
-import type { EventArgs, EventType } from '@cesium-extends/subscriber';
+import type { EventArgs, EventType } from '@cesium-163-extends/subscriber';
 import type { BasicGraphicesOptions } from './base';
 import type {
   ActionCallback,

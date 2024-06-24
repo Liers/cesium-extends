@@ -1,18 +1,18 @@
-# @cesium-extends/over-viewer
+# @cesium-163-extends/over-viewer
 
-`@cesium-extends/over-viewer` 是一个用于同步两个 Cesium Viewer 视图的 npm 包。
+`@cesium-163-extends/over-viewer` 是一个用于同步两个 Cesium Viewer 视图的 npm 包。
 
 ## 安装
 
 ```bash
-npm install @cesium-extends/over-viewer
+npm install @cesium-163-extends/over-viewer
 ```
 
 ## 使用
 
 ```js
 import { Viewer } from "cesium";
-import OverViewer from "@cesium-extends/over-viewer";
+import OverViewer from "@cesium-163-extends/over-viewer";
 
 const leftViewer = new Viewer("left-container");
 const rightViewer = new Viewer("right-container");

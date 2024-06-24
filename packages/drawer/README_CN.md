@@ -1,4 +1,4 @@
-# @cesium-extends/drawer
+# @cesium-163-extends/drawer
 
 一个基于 Cesium 的绘制工具库，支持勾画点、线、多边形、圆等常用图形。
 
@@ -7,13 +7,13 @@
 使用 npm 安装：
 
 ```bash
-npm install @cesium-extends/drawer --save
+npm install @cesium-163-extends/drawer --save
 ```
 
 ## 使用方法
 
 ```javascript
-import Drawer from "@cesium-extends/drawer";
+import Drawer from "@cesium-163-extends/drawer";
 import Cesium from "cesium";
 
 // 初始化Viewer

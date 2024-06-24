@@ -1,21 +1,21 @@
-# @cesium-extends/popup
+# @cesium-163-extends/popup
 
 一个轻量级、易于使用的 CesiumJS 弹窗组件。
 
 ## 安装
 
-要安装 `@cesium-extends/popup`，请运行以下命令：
+要安装 `@cesium-163-extends/popup`，请运行以下命令：
 
 ```bash
-npm install @cesium-extends/popup
+npm install @cesium-163-extends/popup
 ```
 
 ## 使用
 
-以下是如何使用 `@cesium-extends/popup` 的示例：
+以下是如何使用 `@cesium-163-extends/popup` 的示例：
 
 ```javascript
-import Popup from "@cesium-extends/popup";
+import Popup from "@cesium-163-extends/popup";
 import { Viewer } from "cesium";
 
 const viewer = new Viewer("cesiumContainer");

@@ -1,6 +1,6 @@
-# @cesium-extends/measure
+# @cesium-163-extends/measure
 
-@cesium-extends/measure is a measurement tool based on Cesium, which supports distance and area measurement and is easy to use.
+@cesium-163-extends/measure is a measurement tool based on Cesium, which supports distance and area measurement and is easy to use.
 [中文 Readme](./README_CN.md)
 
 ## Installation
@@ -8,12 +8,12 @@
 Install via npm:
 
 ```bash
-npm install @cesium-extends/measure --save
+npm install @cesium-163-extends/measure --save
 ```
 
 ## Usage
 
-Import the `@cesium-extends/measure` module in your project, then instantiate the corresponding measuring class for measurement.
+Import the `@cesium-163-extends/measure` module in your project, then instantiate the corresponding measuring class for measurement.
 
 ### AreaMeasure
 
@@ -21,7 +21,7 @@ Used for non-ground area measurement.
 
 ```typescript
 import { Viewer } from "cesium";
-import { AreaMeasure } from "@cesium-extends/measure";
+import { AreaMeasure } from "@cesium-163-extends/measure";
 
 const viewer = new Viewer("cesiumContainer");
 const areaMeasure = new AreaMeasure(viewer, {
@@ -40,7 +40,7 @@ Used for ground area measurement.
 
 ```typescript
 import { Viewer } from "cesium";
-import { AreaSurfaceMeasure } from "@cesium-extends/measure";
+import { AreaSurfaceMeasure } from "@cesium-163-extends/measure";
 
 const viewer = new Viewer("cesiumContainer");
 const areaSurfaceMeasure = new AreaSurfaceMeasure(viewer, {
@@ -59,7 +59,7 @@ Used for non-ground distance measurement.
 
 ```typescript
 import { Viewer } from "cesium";
-import { DistanceMeasure } from "@cesium-extends/measure";
+import { DistanceMeasure } from "@cesium-163-extends/measure";
 
 const viewer = new Viewer("cesiumContainer");
 const distanceMeasure = new DistanceMeasure(viewer, {
@@ -78,7 +78,7 @@ Used for ground distance measurement.
 
 ```typescript
 import { Viewer } from "cesium";
-import { DistanceSurfaceMeasure } from "@cesium-extends/measure";
+import { DistanceSurfaceMeasure } from "@cesium-163-extends/measure";
 
 const viewer = new Viewer("cesiumContainer");
 const distanceSurfaceMeasure = new DistanceSurfaceMeasure(viewer, {
