@@ -1,6 +1,6 @@
 {
   "name": "cesium-163-extends-monorepo",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "private": false,
   "npmClient": "pnpm",
   "packageManager": "pnpm@8.6.7",

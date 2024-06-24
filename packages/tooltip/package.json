@@ -1,6 +1,6 @@
 {
   "name": "@cesium-163-extends/tooltip",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -31,10 +31,10 @@
     "cesium": "*"
   },
   "devDependencies": {
-    "@cesium-163-extends/subscriber": "workspace:*",
+    "@cesium-163-extends/subscriber": "1.0.0",
     "cesium": "1.70.0"
   },
   "dependencies": {
-    "@cesium-163-extends/common": "workspace:*"
+    "@cesium-163-extends/common": "1.0.0"
   }
 }
